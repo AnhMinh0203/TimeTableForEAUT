@@ -1,0 +1,871 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    display: flex;
+    color: #fff;
+    background-color: #f6f6f6;
+}
+
+.container {
+    background-color: #222d32;
+    width: 300px;
+    height: 739px;
+    /* width: 20%;
+    height: 739px; */
+    overflow: auto;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.img__user {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.name__fullname--text {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.navbar__title {
+    background-color: #000;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.information__list--items {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 20px 0 20px 40px ;
+}
+
+.information__list--items:hover {
+    cursor: pointer;
+    color: #33b5e5 ;
+}
+
+.information__list--items:hover a {
+    cursor: pointer;
+    color: #33b5e5 ;
+}
+
+.information__list--items:hover .change__information {
+    color: #fff ;
+}
+
+.information__list--items:hover .change__information a {
+    color: #fff ;
+}
+
+.information__list--items i {
+    margin-right: 10px;
+}
+
+.change__information {
+    display: inline-block;
+    display: none;
+    list-style-type: none;
+}
+
+.change__information--items {
+    padding: 20px 0 0 10px;
+}
+
+.information__list--items__text  a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar__header__logout a {
+    text-decoration: none;
+}
+
+.navbar__header__logout a:hover {
+    color: red;
+}
+
+/**/
+.banner_img {
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 40%; */
+}
+
+.account {
+    color: black
+}
+
+.account__acc--info {
+    margin-top: 30px;
+}
+
+.account__infor {
+    background-color: #ccc;
+    width: 1000px;
+    height: 460px;
+    margin-top: 20px;
+    margin-left: 140px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+input {
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 10px;
+    width: 800px;
+    /* background-color:#D9D9D9; */
+    background-color: #fff;
+}
+
+.account__infor--list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.infor__list--birth__input, .infor__list--gender__input {
+    width: 350px;
+}
+
+.infor__list--birth__input {
+    margin-right: 80px;
+}
+
+
+.information {
+    display: none;
+    background-color: #fff;
+    width: 100%;
+}
+
+
+.Change_information {
+    display: none;
+}
+
+.account__infor--firstname {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn__update {
+    margin: 20px 0;
+    position: absolute;
+    top: 56%;
+    right: 16%;
+}
+
+.btn__update--infor {
+    background-color: #18396f;
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn__update--infor:hover {
+    background-image: linear-gradient(to right, #3f6bb7, #2f5caf, #1b4497, #031c45);
+    box-shadow: 0 4px 15px 0 rgba(9, 53, 231, 0.75);
+}
+
+/* Change Password */
+.Change_password {
+    display: none;
+}
+
+.changePassword__show--password {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 54%;
+    left: 34%;
+    font-size: 1.2rem;
+    /* width: 100px; */
+}
+
+.changePassword__show--password  input {
+    padding: 8px;
+    margin: 10px 6px 10px 0;
+    border-radius: 10px;
+    width: 20px;
+    background-color: #D9D9D9;
+}
+
+
+/* Đổ dữ liệu */
+#dataContainer {
+    color: #000;
+    display: none;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    margin: 20px 30px 80px 30px;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+    text-align: center;
+    align-items: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#dataContainer {
+    margin-top: 20px;
+}
+
+.managerAccount__search {
+    margin-left: 2.5%;
+}
+
+.managerAccount__search input {
+    background-color: #fff;
+}
+
+.managerAccount__search div:nth-child(2) {
+    position: absolute;
+    top: 45.1%;
+    left: 87.26%;
+    font-size: 1.2rem;
+    /* padding: 5px 5px 8px 12px; */
+    padding: 6px 14px;
+    border-radius: 5px;
+    background-color: #ccc;
+    cursor: pointer;
+
+}
+
+.managerAccount__search i:hover {
+    /* background-color: #ccc; */
+    color: #33b5e5;
+}
+.selected {
+    background-color: #000;
+}
+.admin__fix--icon {
+    /* background-color: #33b5e5; */
+    font-size: 16px;
+    cursor: pointer;
+    color: #fca130;
+    padding: 5px;
+}
+
+.admin__delete--icon {
+    /* background-color: #33b5e5; */
+    font-size: 16px;
+    cursor: pointer;
+    color: red;
+    padding: 5px;
+} 
+
+.admin__lock--icon {
+    /* background-color: #33b5e5; */
+    font-size: 16px;
+    cursor: pointer;
+    color: #33b5e5;
+    padding: 5px;
+}
+
+.admin__unlock--icon {
+    /* background-color: #33b5e5; */
+    font-size: 16px;
+    cursor: pointer;
+    color: #49cc90;
+    padding: 5px;
+}
+
+/* Hover display text */
+.hover-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip {
+    display: none;
+    position: absolute;
+    top: 100%; /* This positions the tooltip below the container */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Center the tooltip precisely */
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .hover-container:hover .tooltip {
+    display: block;
+  }
+
+/*  */
+#table__managerAccount i:hover {
+    opacity: 0.6;
+}
+
+#accountManager__list--user {
+    display: none;
+}
+
+/* Admin change information user */
+
+.Admin__change--user {
+    position: absolute;
+    top: 0;
+    padding-left: 300px;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 80%;
+    height: 100%;
+    display: none;
+}
+
+#admin__update--account {
+    margin: 20px 0 40px 0;
+}
+
+#close__admin--change__user {
+    position: absolute;
+    font-size: 2rem;
+    left: 27%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#close__admin--change__user:hover {
+    color: #ccc;
+}
+
+#Admin__change--infor {
+    background-color: #fff;
+    width: 1000px;
+    height: 100%;
+    margin-top: 50px;
+    margin-left: 100px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+.btn__Admin--update__user {
+    margin: 20px 0;
+    position: absolute;
+    top: 80%;
+    right: 13.6%;
+}
+
+.btnAdmin__update--infor {
+    background-color: #18396f;
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btnAdmin__update--infor:hover {
+    background-image: linear-gradient(to right, #3f6bb7, #2f5caf, #1b4497, #031c45);
+    box-shadow: 0 4px 15px 0 rgba(9, 53, 231, 0.75);
+}
+/* Management classroom */
+#management_classRoom{
+    display: none;
+}
+.class_heading,
+.classRoom_heading   {
+    position: absolute;
+    top: 0;
+    padding-left: 330px;
+}
+.classRoom_heading h1{
+    border-bottom: 3px solid #33B5E5;
+    width: 98%;
+    text-align: left;
+    padding: 10px;
+}
+.seach_name_classRoom{
+    position: absolute;
+    top: 18%;
+    left: 25%;
+    width: 68%;
+    height: 3%;
+    border-radius: 20px;
+}
+.seach_icon_classRoom{
+    position: absolute;
+    top: 20%;
+    left: 91.8%;
+    padding: 8px;
+    background-color: #00C4CC;
+    border-radius: 20px;
+}
+.seach_icon_classRoom:hover{
+    opacity: 0.6;
+}
+#classRoom_table_container{
+    position: absolute;
+    top: 30%;
+    left: 25%; 
+    width: 72%;
+    height: 50%;
+    display: none;
+}
+#classRoom_infor--add,
+.classRoom_infor--add{
+    position: absolute;
+    top: 30%;
+    left: 25%; 
+    width: 72%;
+    height: 50%;
+    background-color: #fff;
+    border: 2px solid #000;
+    display: none;
+}
+.add_classRoom_button{
+    position: absolute;
+    right: 5%;
+    bottom: 20%;
+    padding: 10px 15px;
+    background-color: #00c4cc;
+    border-radius: 10px;
+}
+.add_classRoom_button a{
+    text-decoration: none;
+    color: #000;
+}
+#table__Class--full {
+    position: absolute;
+    top: 30%;
+    left: 20%; 
+}
+.table_container{
+    width: 94%;
+    display: none;
+}
+td .classRoom_edit_button,
+td .classRoom_delete_button{
+    background-color: #00c4cc;
+    text-align: center; 
+    vertical-align: middle; 
+    border-radius: 10px;
+    padding: 5px;
+}
+.classRoom_edit_button a,
+.classRoom_delete_button a{
+  padding: 5px;
+  text-decoration: none;
+  color: #fff;
+}
+.class_button,
+.classRoom_button{
+    position: absolute;
+    bottom: 0;
+    right: 3%;
+    padding: 15px;
+    background-color: #00c4cc;
+    border-radius: 10px;
+}
+.class_button a,
+.classRoom_button a{
+    text-decoration: none;
+    color: #fff;
+}
+/*  */
+.form_group{
+    margin: 30px;
+}
+.class_infor--item,
+.classRoom_infor--item{
+    width: 94%;
+    background-color: #D9D9D9;
+}
+.add_classRoom{
+    display: none;
+}
+.update_classRoom{
+    display: none;
+}
+
+.exit_add_classRoom {
+    position: absolute;
+    top: 25%;
+    right: 3%;
+}
+.exit_update_classRoom{
+    position: absolute;
+    bottom: 100%;
+    right: 0%;
+}
+.exit_update_class,
+.exit_add_class{
+    position: absolute;
+    top: 16%;
+    right: 3%;
+}
+.exit_update_class--icon,
+.exit_add_class--icon,
+.exit_add_classRoom--icon,
+.exit_update_classRoom--icon{
+    color: #fff;
+    padding: 10px 12px;
+    background-color: red;
+}
+/* Managemen class */
+.management_class{
+    display: none;
+}
+.add_class{
+    display: none;
+}
+.add__class--button{
+    position: absolute;
+    right: 3%;
+    bottom: 20%;
+}
+#add__class--button{
+    padding: 10px 15px;
+    background-color: #00c4cc;
+    border-radius: 10px;
+}
+.add__class--confirm{
+    padding: 10px 15px;
+    background-color: #00c4cc;
+    border-radius: 10px;
+    float: right;
+    margin-right: 6%;
+}
+/*  */
+#class_infor,
+.class_infor{
+    position: absolute;
+    top: 20%;
+    left: 25%; 
+    width: 72%;
+    height: 62%;
+    background-color: #fff;
+    border: 2px solid #000;
+    display: none;
+}
+.class_table_container{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 80%;
+}
+#search_table--managerClass{
+    width: 94%;
+}
+.add_class--icon{
+    color: #29a329;
+}
+/*  */
+.update_class{
+    display: none;
+}
+
+/* Manager Schedule */
+
+.Schedule {
+    position: absolute;
+    top: 0;
+    left:  20%;
+    display: none;
+}
+
+.schedule__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule__title {
+    /* width: 26%; */
+}
+
+.schedule__title h1 {
+    border-bottom: 3px solid #33B5E5;
+    width: 98%;
+    text-align: left;
+    padding: 10px;
+}
+
+.input_schedule {
+    display: flex;
+}
+
+.input_schedule input {
+    width: 60%;
+    margin: 60px 20px;
+    /* color: #fff; */
+    /* background-color: #3399CC; */
+}
+
+.schedule__body--item {
+    display: flex;
+}
+
+.schedule__body--item button {
+    margin: 60px 20px;
+    width: 100px;
+    height: 40px;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    color: #fff;
+    background-color: #3399CC;
+}
+
+.schedule__body--item button:hover {
+    background-color: #29a329;
+    cursor: pointer;
+}
+
+.select__class--item {
+    display: none;
+    background-color: #fff;
+    z-index: 1;
+    position: absolute;
+    top: 10%;
+}
+
+#table__class--schedule {
+    padding: 0 20px;
+    height: 700px;
+}
+
+#close__select--class {
+    position: absolute;
+    font-size: 2rem;
+    left: 30%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Select phòng học cho thuật toán  */
+
+#close__select--classroom {
+    position: absolute;
+    font-size: 2rem;
+    left: 30%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#table__classroom--schedule {
+    padding: 0 20px;
+    height: 700px;
+}
+
+
+/* Select môn học cho thuật toán  */
+
+#close__select--subject {
+    position: absolute;
+    font-size: 2rem;
+    left: 30%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#table__subject--schedule {
+    padding: 0 20px;
+    height: 700px;
+}
+
+
+/*  */
+
+.striped-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.striped-table th,
+.striped-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.striped-table tbody tr:nth-child(even) {
+    background-color: #f1f5f6; /* Màu nền cho các hàng chẵn */
+}
+
+.striped-table tbody tr:nth-child(odd) {
+    background-color: white; /* Màu nền cho các hàng lẻ */
+}
+
+/* Schedules */
+#UnRegister_Schedule_table_container,
+#Registered_Schedule_table_container,
+.management_Schedule {
+    display: none;
+}
+.Schedule_heading h1{
+    width: 20%;
+    text-align: left;
+    margin-top: 30px;
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #00c4cc;
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    width: 15%;
+}
+.seach_name_Schedule{
+    position: absolute;
+    top: 18%;
+    left: 25%;
+    width: 68%;
+    height: 3%;
+    border-radius: 20px;
+}
+.seach_icon_Schedule{
+    position: absolute;
+    top: 20%;
+    left: 91.8%;
+    padding: 8px;
+    background-color: #00C4CC;
+    border-radius: 20px;
+}
+.seach_icon_Schedule:hover{
+    opacity: 0.6;
+}
+.Schedule__button--add{
+    position: absolute;
+    right: 6%;
+    bottom: 15%;
+}
+
+#IsSignUp_Schedule_button,
+#IsUnSignUp_Schedule_button,
+#add_Schedule_button{
+    padding: 10px 15px;
+    background-color: #00c4cc;
+    border-radius: 10px;
+}
+.Schedule_table{
+    width: 86%;
+    position: absolute;
+    top: 26%;
+    left: 6%;
+}
+.Schedule_table_container{
+    width: 80%;
+    position: absolute;
+    top: 26%;
+    left: 20%;
+}
+/* manager Subject */
+
+#dataContainer__subject {
+    color: #000;
+    display: none;
+}
+
+#close__admin--change__subject {
+    position: absolute;
+    font-size: 2rem;
+    left: 30%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#close__admin--change__subject:hover {
+    color: #ccc;
+}
+
+.btn__change--subject {
+    top: 58%;
+}
+
+.subject__infor {
+    height: 500px;
+    background-color: #fff;
+}
+
+.admin__add--icon {
+    color: green;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.admin__add--icon:hover {
+    color: #29a329;
+}
+
+#close__admin--add__subject  {
+    position: absolute;
+    font-size: 2rem;
+    left: 30%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#close__admin--add__subject:hover {
+    color: #ccc;
+}
+
+
+.btn__manager--account div:nth-child(2)  button {
+    background-color: #00C4CC;
+    color: #fff;
+    padding: 10px 6px;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+.btn__manager--account div:nth-child(1)  button {
+    background-color: red;
+    color: #fff;
+    padding: 10px 6px;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+.btn__manager--account div button:hover {
+    opacity: 0.6;
+}

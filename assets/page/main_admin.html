@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../css/main_admin.css">
+    <script src="../js/main_admin.js"></script>
+    <script src="../js/call_api.js"></script>
+    <title>Admin</title>
+</head>
+<body>
+    <body>
+        <div class="body">
+            <!--  -->
+            <div class="container">
+                <div class="navbar">
+                    <div class="name">
+                        <div class="img">
+                            <img src="" alt="" class="img__user" id="img__user">
+                        </div>
+                        <div class="name__fullname">
+                            <p class="name__fullname--text" id="name__fullname--text">User</p>
+                        </div>
+                    </div>
+                    <div class="navbar__title">
+                        <p class="navbar__title--text">Chức năng hệ thống</p>
+                    </div>
+                    <div class="navbar__information">
+                        <ul class="navbar__information--list">
+                            <li class="information__list--items" onclick=" getInformation()">
+                                <i class="fa-solid fa-chevron-right information__list--items__icon" id="information__list--items__icon"></i>
+                                <span class="information__list--items__text" >
+                                    <a href="#" id="information__list" onclick="Show()">Thông tin cá nhân</a>
+                                </span>
+                                <ul class="change__information" id="change__information">
+                                    <li class="change__information--items" onclick="ShowchangInfor()">
+                                        <i class="fa-solid fa-chevron-right" id="changeInfor__Icon"></i>
+                                        <span class="information__list--items__text" >
+                                            <a href="#" id="information__list--items__text">Thay đổi thông tin</a>
+                                        </span>
+                                    </li>
+                                    <li class="change__information--items" >
+                                        <i class="fa-solid fa-chevron-right" id="changePassword__icon"></i>
+                                        <span class="information__list--items__text">   
+                                            <a href="#" id="changePassword__list--items__text" onclick="ShowchangPassword()">Đổi mật khẩu</a>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="information__list--items" id="scheduling" onclick="ShowScheduling()">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                <span class="information__list--items__text" >
+                                    <a href="#" id="chedulingText">Sắp xếp lịch giảng</a>
+                                </span>
+                            </li>
+                            <li class="information__list--items" onclick="GetAllScheduleClass(1)">
+                                <i class="fa-solid fa-chevron-right" id="showSchedule_icon"></i>
+                                <span class="information__list--items__text">
+                                    <a href="#" id="showSchedule_text">Xem lịch giảng</a>
+                                </span>
+                            </li>
+                            <!-- Minh le -->
+                            <li class="information__list--items" onclick=" GetAllManagerClass(1)">
+                                <i class="fa-solid fa-chevron-right" id="manageClass_icon--down"></i>
+                                <span class="information__list--items__text">
+                                    <a href="#" id="manageClass_text">Quản lý lớp học</a>
+                                </span>
+                            </li>
+                            <li class="information__list--items"  onclick="GetAllSearchSubjectForSchedule(1)">
+                                <i class="fa-solid fa-chevron-right" id="Subject__icon" ></i>
+                                <span class="information__list--items__text" >
+                                    <a href="#" id="Subject__text">Quản lý môn học</a>
+                                </span>
+                            </li>
+                            <!-- Minh le -->
+                            <li class="information__list--items"  onclick="GetAllManagerClassRoom(1)">
+                                <i class="fa-solid fa-chevron-right " id="managerClassRoom__Icon"></i>
+                                <span class="information__list--items__text">
+                                    <a href="#" id="managerClassRoom__Text">Quản lý phòng học</a>
+                                </span>
+                            </li>
+            
+                            
+                            <li class="information__list--items" id="ManagerAccount" onclick="GetAllManagerAccountForSchedule(1)">
+                                <i class="fa-solid fa-chevron-right" id="managerAcount__Icon"></i>
+                                <span class="information__list--items__text">
+                                    <a href="#" id="managerAcount__Text">Quản lý tài khoản</a>
+                                </span>
+                            </li>
+                            <li class="information__list--items">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                <span class="information__list--items__text navbar__header__logout"  onclick="DeleteLocalStorage()">
+                                    <a href="./index.html">Đăng xuất</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="information" id="information">
+                <div class="account">
+                    <!-- <div class="banner_img">
+                        <img src="../img/banner_eaut.png" alt="">
+                    </div>
+                    <div style="width: 1256px; background-color: #3399CC; height: 30px; display: flex; justify-content: end; align-items: end;"></div> -->
+                    <div class="account__acc">
+                        <h1 class="account__acc--info">Thông tin tài khoản</h1>
+                    </div>
+                    <div class="account__infor">
+                        <div class="account__infor--username">
+                            <h2 class="account__infor--username__text">Tên đăng nhập</h2>
+                            <input type="text" class="account__infor--username__input" id="account__infor--username__input" readonly>
+                        </div>
+                        <div class="account__infor--password">
+                            <h2 class="account__infor--password__text">Mật khẩu</h2>
+                            <input type="text" class="account__infor--password__input" readonly>
+                        </div>
+                        <div class="account__infor--fullname">
+                            <h2 class="account__infor--fullname__text">Họ tên</h2>
+                            <input type="text" class="account__infor--fullname__input" id="account__infor--fullname__input" readonly>
+                        </div>
+                        <div class="account__infor--list">
+                            <div class="infor__list--birth">
+                                <h2 class="infor__list--birth__text">Ngày sinh</h2>
+                                <input type="text" class="infor__list--birth__input" id="infor__list--birth__input" readonly>
+                            </div>
+                            <div class="infor__list--gender">
+                                <h2 class="infor__list--gender__text">Giới tính</h2>
+                                <input type="text" class="infor__list--gender__input" id="infor__list--gender__input" readonly>
+                            </div>
+                        </div>
+                        <div class="account__infor--email">
+                            <h2 class="account__infor--email__text">Email</h2>
+                            <input type="text" class="account__infor--email__input" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Change Information -->
+            <div class="Change_information" id="Change_information">
+                <div class="account">
+                    <div class="account__acc">
+                        <h1 class="account__acc--info">Sửa thông tin tài khoản</h1>
+                    </div>
+                    <div class="account__infor">
+                        <div class="account__infor--list">
+                            <div class="account__infor--username infor__list--birth">
+                                <h2 class="account__infor--username__text">First Name</h2>
+                                <input type="text" class="account__infor--username__input infor__list--birth__input" id="Change__firstName">
+                            </div>
+    
+                            <div class="account__infor--username infor__list--gender">
+                                <h2 class="account__infor--username__text">Last Name</h2>
+                                <input type="text" class="account__infor--username__input infor__list--gender__input" id="Change_lastName">
+                            </div>
+                        </div>
+                        <div class="account__infor--list">
+                            <div class="infor__list--birth">
+                                <h2 class="infor__list--birth__text">Ngày sinh</h2>
+                                <input type="text" class="infor__list--birth__input" id="Change__dateOfBirth" >
+                            </div>
+                            <div class="infor__list--gender">
+                                <h2 class="infor__list--gender__text">Giới tính</h2>
+                                <input type="text" class="infor__list--gender__input" id="Change__gender" >
+                            </div>
+                        </div>
+                        <div class="account__infor--email">
+                            <h2 class="account__infor--email__text">Avata</h2>  
+                            <input type="text" class="account__infor--email__input" id="Change_avata">
+                        </div>
+                        <div class="btn__update">
+                            <button type="button" class="btn__update--infor" onclick="ChangeInformation()">Cập nhật</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Change Password  -->
+            <div class="Change_password" id="Change_password">
+                <div class="account">
+                    <div class="account__acc">
+                        <h1 class="account__acc--info">Đổi mật khẩu</h1>
+                    </div>
+                    <div class="account__infor">
+                        <div class="account__infor--email">
+                            <h2 class="account__infor--email__text">Mật khẩu cũ</h2>
+                            <input type="password" class="account__infor--email__input" id="password__old">
+                        </div>
+                        <div class="account__infor--email">
+                            <h2 class="account__infor--email__text">Mật khẩu mới</h2>
+                            <input type="password" class="account__infor--email__input" id="password__new">
+                        </div>
+                        <div class="account__infor--email">
+                            <h2 class="account__infor--email__text">Nhập lại mật khẩu mới</h2>
+                            <input type="password" class="account__infor--email__input" id="confirm__password--new">
+                        </div>
+                        <div class="account__infor--email changePassword__show--password">
+                            <input type="checkbox" class="" id="changePassword__show--password" onclick="ShowChangePassword()"> 
+                            <p  type = "checkbox">Hiển thị mật khẩu</p>
+                        </div>
+                        <div class="btn__update">
+                            <button type="button" class="btn__update--infor" onclick="ChangePassword()">Cập nhật</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dataContainer" >
+                <div class="account__acc">
+                    <h1 class="account__acc--info">Quản lý tài khoản</h1>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="account__infor--username managerAccount__search" style="position: relative;">
+                            <div>
+                                <h2 class="account__infor--username__text">Tìm kiếm tài khoản</h2>
+                                <input type="text" class="account__infor--username__input infor__list--gender__input" id="accountManager__search--name" placeholder="Nhập tên hoặc id người dùng">
+                            </div>
+                            
+                            <div>
+                                <button style="color: #ccc;" type="submit">
+                                    <i class="fa-solid fa-magnifying-glass" id="accountManager__search--icon" onclick="GetAllSearchAccountForSchedule(1)"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="AdminManager__add--account">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <div class="btn__manager--account">
+                            <div>
+                                <button class="btn__managerAccount--TG" onclick="AdminLockAccountType('TG',1)">Khóa giảng viên thỉnh giảng</button>
+                                <button class="btn__managerAccount--CH" onclick="AdminLockAccountType('CH',1)">Khóa giảng viên cơ hữu</button>
+                            </div>
+                            <div>
+                                <button class="btn__managerAccount--CH" onclick="AdminLockAccountType('TG',0)"> Mở khóa giảng viên thỉnh giảng</button>
+                                <button class="btn__managerAccount--CH" onclick="AdminLockAccountType('CH',0)">Mở khóa giảng viên cơ hữu</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="accountManager__list--user"></div>
+                </div>
+                <div id="table__Account--full"></div>
+                <div id="table__Account--item"></div>
+            </div>
+
+            <!-- Change Information -->
+            <div class="Admin__change--user" id="Admin__change--user" >
+                <div class="account">
+                    <i class="fa-solid fa-xmark" id="close__admin--change__user" onclick="CloseAdminChangeUser()"></i>
+                    <div class="account__infor" id="Admin__change--infor">
+                        <div class="account__acc" id="admin__update--account">
+                            <h1 class="account__acc--info" style="margin: 0;">Sửa thông tin tài khoản</h1>
+                        </div>
+                        <div class="account__infor--list">
+                            <div class="account__infor--username infor__list--birth">
+                                <h2 class="account__infor--username__text">First Name</h2>
+                                <input type="text" class="account__infor--username__input infor__list--birth__input" id="Change__firstName--admin">
+                            </div>
+
+                            <div class="account__infor--username infor__list--gender">
+                                <h2 class="account__infor--username__text">Last Name</h2>
+                                <input type="text" class="account__infor--username__input infor__list--gender__input" id="Change_lastName--admin">
+                            </div>
+                        </div>
+                        <div class="account__infor--email">
+                            <h2 class="account__infor--email__text">Email</h2>  
+                            <input type="text" class="account__infor--email__input" id="Change_Email--admin">
+                        </div>
+                        <div class="account__infor--email">
+                            <h2 class="account__infor--email__text">Số điện thoại</h2>  
+                            <input type="text" class="account__infor--email__input" id="Change_numberphone--admin">
+                        </div>
+                        <div class="account__infor--list">
+                            <div class="infor__list--birth">
+                                <h2 class="infor__list--birth__text">Ngày sinh</h2>
+                                <input type="text" class="infor__list--birth__input" id="Change__dateOfBirth--admin" >
+                            </div>
+                            <div class="infor__list--gender">
+                                <h2 class="infor__list--gender__text">Giới tính</h2>
+                                <input type="text" class="infor__list--gender__input" id="Change__gender--admin" >
+                            </div>
+                        </div>
+                        <div class="account__infor--email">
+                            <h2 class="account__infor--email__text">Avata</h2>  
+                            <input type="text" class="account__infor--email__input" id="Change_avata--admin">
+                        </div>
+                        <div class="btn__Admin--update__user">
+                            <button type="button" class="btnAdmin__update--infor" onclick="AdminChangeInforUser()">Cập nhật</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- manager Subjects -->
+            <div id="dataContainer__subject" >
+                <div class="account__acc">
+                    <h1 class="account__acc--info">Quản lý môn học</h1>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="account__infor--username managerAccount__search" style="position: relative;">
+                            <div>
+                                <h2 class="account__infor--username__text">Tìm kiếm môn học</h2>
+                                <input type="text" class="account__infor--username__input infor__list--gender__input" id="SubjectManager__search--name" placeholder="Nhập tên môn học">
+                            </div>
+                            
+                            <div>
+                                <button style="color: #ccc;" type="submit">
+                                    <i class="fa-solid fa-magnifying-glass" id="SubjectManager__search--icon" onclick="GetAllSearchSubjectForSchedule(1)"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="AdminManager__add--account">
+                            <div class="hover-container">
+                                <i class="fa-solid fa-plus admin__add--icon" onclick="OpenAdminAddSubject()"></i>
+                                <span class="tooltip">Thêm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="accountManager__list--user"></div>
+                </div>
+                <div id="table__Subject--full" style="padding-left: 200px;"></div>
+                <div id="table__Subject--item"></div>
+            </div>
+        </div>
+
+        <!-- Add Subject -->
+        <div class="Admin__change--user" id="Admin__add--subjects" style="display: none;" >
+            <div class="account">
+                <i class="fa-solid fa-xmark" id="close__admin--add__subject" onclick="CloseAdminAddSubject()"></i>
+                <div class="account__infor subject__infor" id="subjects__change--infor">
+                    <div class="account__acc" id="subjects__add--account">
+                        <h1 class="account__acc--info" style="margin: 0;">Thêm môn học</h1>
+                    </div>
+                    <div class="account__infor--email">
+                        <h2 class="account__infor--email__text">Mã môn học</h2>  
+                        <input type="text" class="account__infor--email__input" id="add_CourseCode--admin">
+                    </div>
+                    <div class="account__infor--email">
+                        <h2 class="account__infor--email__text">Tên môn học</h2>  
+                        <input type="text" class="account__infor--email__input" id="add_Name--admin">
+                    </div>
+                    <div class="account__infor--email">
+                        <h2 class="account__infor--email__text">Số tín chỉ</h2>  
+                        <input type="number" class="account__infor--email__input" id="add_Credits--admin" min="0">
+                    </div>
+                    <div class="account__infor--email">
+                        <h2 class="account__infor--email__text">Mô tả</h2>  
+                        <input type="text" class="account__infor--email__input" id="add_Description--admin">
+                    </div>
+                    <div class="btn__Admin--update__user btn__change--subject">
+                        <button type="button" class="btnAdmin__update--infor " onclick="AdminAddSubject()">Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Change Subjects -->
+        <div class="Admin__change--user" id="Admin__change--subjects" >
+            <div class="account">
+                <i class="fa-solid fa-xmark" id="close__admin--change__subject" onclick="CloseAdminChangeSubject()"></i>
+                <div class="account__infor subject__infor" id="subjects__change--infor">
+                    <div class="account__acc" id="subjects__update--account">
+                        <h1 class="account__acc--info" style="margin: 0;">Sửa thông tin môn học</h1>
+                    </div>
+                    <div class="account__infor--email">
+                        <h2 class="account__infor--email__text">Mã môn học</h2>  
+                        <input type="text" class="account__infor--email__input" id="Change_CourseCode--admin">
+                    </div>
+                    <div class="account__infor--email">
+                        <h2 class="account__infor--email__text">Tên môn học</h2>  
+                        <input type="text" class="account__infor--email__input" id="Change_Name--admin">
+                    </div>
+                    <div class="account__infor--email">
+                        <h2 class="account__infor--email__text">Số tín chỉ</h2>  
+                        <input type="number" class="account__infor--email__input" id="Change_Credits--admin" min="0">
+                    </div>
+                    <div class="account__infor--email">
+                        <h2 class="account__infor--email__text">Mô tả</h2>  
+                        <input type="text" class="account__infor--email__input" id="Change_Description--admin">
+                    </div>
+                    <div class="btn__Admin--update__user btn__change--subject">
+                        <button type="button" class="btnAdmin__update--infor" onclick="AdminChangeSubject()">Cập nhật</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Management class -->
+        <div class="class_Container" id="class_Container">     
+            <div class="management_class" id="management_class">
+                <div class="classRoom_heading">
+                    <h1>Quản lý lớp học</h1>
+                </div>
+                <div class="classRoom_searching">
+                    <input type="text" class="seach_name_classRoom" placeholder="Nhập tên lớp học">
+                    <i class="fa-solid fa-magnifying-glass seach_icon_classRoom"></i>
+                </div>
+                <div class="class_table">
+                    <div class="class_table_container" id="class_table_container"></div>
+                    
+                </div>
+                    <div class="add__class--button" onclick="showAddClassForm()">
+                        <button id="add__class--button">Thêm lớp học</button>
+                    </div>
+                <div id="table__Class--full"></div>
+                <div id="ClassManager"></div>
+            </div>
+            <div class="add_class" id="add_class">
+                <div class="class_heading">
+                    <h1>Thêm lớp học</h1>
+                </div>
+                <div class="exit_add_class" onclick="showInforClass()">
+                    <i class="fa-solid fa-xmark exit_add_class--icon"></i>
+                </div>
+                <div class="class_infor" id="class_infor">
+                    <div class="form_group">
+                        <label for="">Tên lớp học</label><br>
+                        <input type="text" id="name_class--add" class="class_infor--item" ><br>
+                        <label for="">Khóa</label><br>
+                        <input type="text" id="course_class--add" class="class_infor--item" ><br>
+                        <label for="">Năm học</label><br>
+                        <input type="text" id="year_class--add" class="class_infor--item" ><br>
+                        <label for="">Mô tả</label><br>
+                        <input type="text" id="desc_class--add" class="class_infor--item" ><br>
+                    </div>
+                    <div id="add__class--confirm" onclick="addDataForClass()">
+                        <button class="add__class--confirm">Thêm</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="update_class" id="update_class">
+                <div class="class_heading">
+                    <h1>Cập nhật thông tin lớp học</h1>
+                </div>
+                <div class="exit_update_class" onclick="showInforClass()">
+                    <i class="fa-solid fa-xmark exit_update_class--icon"></i>
+                </div>
+                <div class="class_infor" id="class_infor--update">
+                    <div class="form_group">
+                        <label for="">Tên lớp học</label><br>
+                        <input type="text" id="name_class--update" class="class_infor--item" ><br>
+                        <label for="">Khóa</label><br>
+                        <input type="text" id="course_class--update" class="class_infor--item" ><br>
+                        <label for="">Năm học</label><br>
+                        <input type="text" id="year_class--update" class="class_infor--item" ><br>
+                        <label for="">Mô tả</label><br>
+                        <input type="text" id="desc_class--update" class="class_infor--item" ><br>
+                    </div>
+                </div>
+                <div class="class_button" id="class_button_update">
+                    <div class="update_class_button">
+                        <a href="#">Cập nhật</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Management classroom -->
+        <div class="classRoom_Container" id="classRoom_Container">
+            <div class="management_classRoom" id="management_classRoom" >
+                <div class="classRoom_heading">
+                    <h1>Quản lý phòng học</h1>
+                </div>
+                <div class="classRoom_searching">
+                    <input type="text" class="seach_name_classRoom" placeholder="Nhập tên phòng học">
+                    <i class="fa-solid fa-magnifying-glass seach_icon_classRoom"></i>
+                </div>
+                <div class="classRoom_table">
+                    <div class="classRoom_table_container" id="classRoom_table_container"></div>
+                </div>
+                <div id="ClassRoomManager"></div>
+                <div id="classRoom__button__add" onclick="showAddClassRoomForm()">           
+                    <button class="add_classRoom_button">Thêm phòng học</button>
+                </div>
+            </div>
+            <!--  -->
+            <div class="add_classRoom" id="add_classRoom">
+                <div class="classRoom_heading">
+                    <h1>Thêm phòng học</h1>
+                </div>
+                <div class="exit_add_classRoom" onclick="showInforClassRoom()">
+                    <i class="fa-solid fa-xmark exit_add_classRoom--icon"></i>
+                </div>
+                <div class="classRoom_infor--add" id="classRoom_infor--add">
+                    <div class="form_group">
+                        <label for="">Tên phòng học</label><br>
+                        <input type="text" id="name_classRoom--add" class="classRoom_infor--item" ><br>
+                        <label for="">Mô tả</label><br>
+                        <input type="text" id="desc_classRoom--add" class="classRoom_infor--item" ><br>
+                    </div>
+                    <div id="add__classRoom--confirm" onclick="addDataForClassRoom()">
+                        <button class="add__classRoom--confirm">Thêm</button>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="update_classRoom" id="update_classRoom">
+                <div class="classRoom_heading">
+                    <h1>Cập nhật thông tin phòng học</h1>
+                </div>
+                <div class="classRoom_infor" id="classRoom_infor">
+                    <div class="exit_update_classRoom" onclick="showInforClassRoom()">
+                        <i class="fa-solid fa-xmark exit_update_classRoom--icon"></i>
+                    </div>
+                    <div class="form_group">
+                        <label for="">Tên phòng học</label><br>
+                        <input type="text" id="name_classRoom--update" class="classRoom_infor--item" ><br>
+                        <label for="">Mô tả</label><br>
+                        <input type="text" id="desc_classRoom--update" class="classRoom_infor--item" ><br>
+                    </div>
+                    <div id="classRoom_button_update">
+                        <div class="update_classRoom_button" >
+                            <a href="#">Cập nhật</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- All Schedules -->
+        <div class="Schedule_Container" id="Schedule_Container" >
+            <div class="management_Schedule" id="management_Schedule" >
+                <div class="Schedule_heading">
+                    <h1>Xem lịch giảng </h1>
+                </div>
+                <div class="Schedule_searching">
+                    <input type="text" class="seach_name_Schedule" id="seach_name_Schedule" placeholder="Nhập tên lớp học">
+                    <i class="fa-solid fa-magnifying-glass seach_icon_Schedule" onclick="GetAllScheduleClass(1)"></i>
+                </div>
+                <div class="Schedule_table">
+                    <div class="Schedule_table_container" id="Schedule_table_container"></div>
+                    <div class="Schedule_table_container" id="Registered_Schedule_table_container"></div>
+                    <div class="Schedule_table_container" id="UnRegister_Schedule_table_container"></div>
+                </div>
+                <div id="ScheduleManager"></div>
+                <div class="Schedule__button--add" >     
+                    <button id="IsUnSignUp_Schedule_button" onclick="IsUnRegisteredSchedule(1)">Lịch chưa đăng ký</button>
+                    <button id="IsSignUp_Schedule_button" onclick="IsRegisteredSchedule(1)">Lịch đã đăng ký</button>      
+                    <button id="add_Schedule_button">Xuất Excel</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manager Register Schedule -->
+        <div class="Schedule" id="Schedule">
+            <div class="schedule__body">
+                <div class="schedule__title">
+                    <h1>Sắp xếp lịch giảng</h1>
+                </div>
+                <div class="schedule__body--item">
+                    <div class="input_schedule">
+                        <input type="date" name="" id="startDate">
+                        <input type="date" name="" id="endDate">
+                    </div>
+                    <div class="btn_schedule">
+                        <button class="select_class" onclick=" GetAllClassForSchedule(1)">
+                            <p class="select__class--list" >Chọn lớp</p>
+                        </button>
+                        <button class="select_class" onclick="GetAllClassRoomForSchedule(1)">
+                            <p class="select__class--list">Chọn phòng</p>
+                        </button>
+                        <button class="select_class" onclick="GetAllSubjectForSchedule(1)">
+                            <p class="select__class--list" >Chọn môn</p>
+                        </button>
+                        <button class="select_class" onclick="Lecture_Schedule()">
+                            <p class="select__class--list" >Sắp xếp lịch</p>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="schedule__body--allNotUser" id="schedule__body--allNotUser">
+            </div>
+        </div>
+        <!-- Select Class -->
+        <div class="Admin__change--user" id="select__class--item" >
+            <div class="account">
+                <i class="fa-solid fa-xmark" id="close__select--class" onclick="CloseSelectClass()"></i>
+
+                <div class="account__infor" id="table__class--schedule">    
+                    <div class="account__acc" id="admin__update--account">
+                        <h1 class="account__acc--info" style="margin: 0;">Chọn lớp học</h1>
+                    </div>
+                    <div class="account__acc" id="admin__update--account">
+                        <input type="search" name="" id="" placeholder="Tìm kiếm ">
+                    </div>
+                    <div class="btn__Admin--update__user">
+                        <button type="button" class="btnAdmin__update--infor" onclick="AddListIdClassOk()">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>      
+        <!-- Select Classroom -->
+        <div class="Admin__change--user" id="select__classroom--item" >
+            <div class="account">
+                <i class="fa-solid fa-xmark" id="close__select--classroom" onclick="CloseSelectClassRoom()"></i>
+
+                <div class="account__infor" id="table__classroom--schedule">    
+                    <div class="account__acc" id="admin__update--account">
+                        <h1 class="account__acc--info" style="margin: 0;">Chọn phòng học</h1>
+                    </div>
+                    <div class="account__acc" id="admin__update--account">
+                        <input type="search" name="" id="" placeholder="Tìm kiếm ">
+                    </div>
+                    <div class="btn__Admin--update__user">
+                        <button type="button" class="btnAdmin__update--infor" onclick="AddListIdClassRoomOk()">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>     
+        <!-- Select Subject  -->
+        <div class="Admin__change--user" id="select__subject--item" >
+            <div class="account">
+                <i class="fa-solid fa-xmark" id="close__select--subject" onclick="CloseSelectSubject()"></i>
+
+                <div class="account__infor" id="table__subject--schedule">    
+                    <div class="account__acc" id="admin__update--account">
+                        <h1 class="account__acc--info" style="margin: 0;">Chọn môn học</h1>
+                    </div>
+                    <div class="account__acc" id="admin__update--account">
+                        <input type="search" name="" id="" placeholder="Tìm kiếm ">
+                    </div>
+                    <div class="btn__Admin--update__user">
+                        <button type="button" class="btnAdmin__update--infor" onclick="AddListIdSubjectOk()">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>              
+        <script>
+
+            // Lấy tên đăng nhập từ localStorage
+            const fullname = localStorage.getItem("fullname");
+            const avata = localStorage.getItem("avata");
+            // Hiển thị tên đăng nhập
+            const nameLoginElement = document.getElementById("name__fullname--text");
+            const avataimg = document.getElementById("img__user");
+            if (nameLoginElement) {
+                nameLoginElement.innerText = fullname;
+                avataimg.src = avata;
+            }
+            </script>
+    </body>
+</html>

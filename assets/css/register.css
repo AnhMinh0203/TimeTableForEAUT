@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.container img {
+    width: 1519px;
+    height: 735px;
+}
+
+.body_register {
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 12%;
+    right: 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 60px;
+}
+
+.account, .password, .retype, .fullname, .phonenumber, .email {
+    height: 30px;
+    width: 400px;
+    margin: 20px 0 0 0;
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding-left: 15px;
+    font-size: 20px;
+    color: white;
+}
+
+.first__name, .last__name {
+    height: 30px;
+    width: 200px;
+    margin: 20px 0 0 0;
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding-left: 15px;
+    font-size: 20px;
+    color: white;
+}
+
+.register {
+    margin-top: 20px;
+    margin-left: 110px;
+    width: 200px;
+    height: 40px;
+    color: white;
+    background-color: red;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.info {
+    color: white;
+    font-size: 40px;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.register:hover {
+    background-image: linear-gradient(to right, #e81733, #c82222, #f72626, #e91321);
+    box-shadow: 0 4px 15px 0 rgba(250, 11, 11, 0.75);
+}
+
+.birth_gender {
+    display: flex;
+    justify-content: space-between;
+}
+
+.birth {
+    height: 30px;
+    width: 170px;
+    margin: 20px 0 0 0;
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding-left: 15px;
+    font-size: 20px;
+    color: white;
+}
+
+.choose {
+    background-color: transparent;
+}
+
+.information {
+    display: flex;
+}
+
+.information a {
+    position: absolute;
+    top: 4%;
+    left: 4%;
+}
+
+.information a:hover i {
+    color: #ccc;
+}
+
+i {
+    color: #fff;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.input_gender {
+    color: #fff;
+    margin-top: 30px;
+    font-size: 22px;
+}

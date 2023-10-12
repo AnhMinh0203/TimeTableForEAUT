@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container img {
+    width: 1536px;
+    height: 735px;
+}
+
+.body_login {
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 16%;
+    right: 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 60px;
+}
+
+.title {
+    text-transform: uppercase;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 2.6rem;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+.input p i {
+    position: absolute;
+    margin-top: 28px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.username {
+    height: 30px;
+    width: 280px;
+    margin: 20px 0 0 0;
+    padding-left: 40px;
+    outline: none;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.password {
+    height: 30px;
+    width: 280px;
+    margin: 20px 0 10px 0;
+    padding-left: 40px;
+    outline: none;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+::placeholder { 
+    color: #fff;
+    opacity: 1; 
+}
+
+.checkbox__show--pasword {
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 0;
+}
+
+.btn__login a button {
+    background-color: #18396f;
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn__login a button:hover {
+    background-image: linear-gradient(to right, #3f6bb7, #2f5caf, #1b4497, #031c45);
+    box-shadow: 0 4px 15px 0 rgba(9, 53, 231, 0.75);
+}
+
+.forgot__password {
+    padding: 10px 0;
+}
+
+.forgot__password a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.register a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.register a:hover {
+    color: rgba(9, 53, 231, 0.75)
+}
