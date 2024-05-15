@@ -315,7 +315,7 @@
                     </div>
                     <div id="accountManager__list--user"></div>
                 </div>
-                <div id="table__Subject--full" style="padding-left: 200px;"></div>
+                <div id="table__Subject--full"></div>
                 <div id="table__Subject--item"></div>
             </div>
         </div>
@@ -394,12 +394,14 @@
                     <i class="fa-solid fa-magnifying-glass seach_icon_classRoom"></i>
                 </div>
                 <div class="class_table">
-                    <div class="class_table_container" id="class_table_container"></div>
-                    
-                </div>
+                    <div class="class_table_container" id="class_table_container">
+                       
+                    </div>
                     <div class="add__class--button" onclick="showAddClassForm()">
                         <button id="add__class--button">Thêm lớp học</button>
                     </div>
+                </div>
+                    
                 <div id="table__Class--full"></div>
                 <div id="ClassManager"></div>
             </div>
@@ -463,7 +465,7 @@
                 </div>
                 <div class="classRoom_searching">
                     <input type="text" class="seach_name_classRoom" placeholder="Nhập tên phòng học">
-                    <i class="fa-solid fa-magnifying-glass seach_icon_classRoom"></i>
+                    <i class="fa-solid fa-magnifying-glass seach_icon_classRoom" onclick="GetAllSearchDataClassRoom(1)"></i>
                 </div>
                 <div class="classRoom_table">
                     <div class="classRoom_table_container" id="classRoom_table_container"></div>

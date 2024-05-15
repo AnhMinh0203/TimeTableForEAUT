@@ -67,7 +67,7 @@ function Show() {
         colorTextManagerAccount.style.color = "#fff";
         navbarSchedulingIcon.style.color = "#fff";
         navbarSchedulingText.style.color = "#fff";
-        textColorManagerClass.style.color = "#fff";
+        textColorManagerClass.style.color = "#fff" ;
         iconDownClass.style.color = "#fff";
         textColorManagerClassRoom.style.color = "#fff";
         iconColorManagerClassRoom.style.color = "#fff";
@@ -93,7 +93,7 @@ function Show() {
         colorTextManagerAccount.style.color = "#fff";
         navbarSchedulingIcon.style.color = "#fff";
         navbarSchedulingText.style.color = "#fff";
-        textColorManagerClass.style.color = "#fff";
+        textColorManagerClass.style.color = "#fff" ;
         iconDownClass.style.color = "#fff";
         textColorManagerClassRoom.style.color = "#fff";
         iconColorManagerClassRoom.style.color = "#fff";
@@ -125,6 +125,7 @@ function ShowchangInfor() {
     var managementClassRoom = document.getElementById("management_classRoom");
     var tableClassRoom = document.getElementById("classRoom_table_container");
     var tableClass = document.getElementById("class_table_container");
+    
     // Scheduling
     var AreaSchedule = document.getElementById("Schedule");
     var navbarSchedulingIcon = document.getElementById("scheduling");
@@ -449,13 +450,16 @@ function ShowScheduling() {
     var managerAcountIcon = document.getElementById("managerAcount__Icon");
     var managerClassRoomText = document.getElementById("managerClassRoom__Text");
     var managerClassRoomIcon = document.getElementById("managerClassRoom__Icon");
+    var textColorManagerClass = document.getElementById("manageClass_text");
+    var textColorManagerIcon = document.getElementById("manageClass_icon");
+
 
     // Subject
     var ManagerSubject = document.getElementById("dataContainer__subject");
     var subjectIcon = document.getElementById("Subject__icon");
     var subjectText = document.getElementById("Subject__text");
     var textColorSchedule = document.getElementById("showSchedule_text");
-    var iconDownSchedule = document.getElementById("showSchedule_icon");
+    var iconDownSchedule = document.getElementById("manageClass_icon--down");
     
     if (style.display === "none") {
         // display
@@ -501,6 +505,10 @@ function ShowScheduling() {
         subjectText.style.color = "#fff";
         textColorSchedule.style.color = "#fff";
         iconDownSchedule.style.color = "#fff";
+
+        //
+        textColorManagerClass.style.color = "#fff";
+        textColorManagerIcon.style.color = "#fff";
     } else {
         changeInformation.style.display = "none";
         information.style.display = "none";
@@ -539,6 +547,10 @@ function ShowScheduling() {
         subjectText.style.color = "#fff";
         textColorSchedule.style.color = "#fff";
         iconDownSchedule.style.color = "#fff";
+        //
+        textColorManagerClass.style.color = "#fff";
+        textColorManagerIcon.style.color = "#fff";
+
     }
 }
 

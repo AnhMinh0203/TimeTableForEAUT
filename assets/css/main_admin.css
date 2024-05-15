@@ -445,6 +445,10 @@ h1 {
     opacity: 0.6;
 }
 #classRoom_table_container{
+    border: 1px solid black;
+    max-height: 500px ;
+    overflow-y: auto;
+    overflow-x: hidden;
     position: absolute;
     top: 30%;
     left: 25%; 
@@ -464,9 +468,9 @@ h1 {
     display: none;
 }
 .add_classRoom_button{
-    position: absolute;
-    right: 5%;
-    bottom: 20%;
+    /* position: absolute; */
+    margin: -5% 5% 0% 0;
+    float: right;
     padding: 10px 15px;
     background-color: #00c4cc;
     border-radius: 10px;
@@ -561,8 +565,9 @@ td .classRoom_delete_button{
 }
 .add__class--button{
     position: absolute;
-    right: 3%;
-    bottom: 20%;
+    right: 4%;
+    bottom: 3%;
+    margin-bottom: 20px;
 }
 #add__class--button{
     padding: 10px 15px;
@@ -589,13 +594,17 @@ td .classRoom_delete_button{
     display: none;
 }
 .class_table_container{
+    border: 1px solid black;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
     position: absolute;
     top: 30%;
-    left: 20%;
-    width: 80%;
+    left: 25%;
+    width: 70%;
 }
 #search_table--managerClass{
-    width: 94%;
+    width: 95%;
 }
 .add_class--icon{
     color: #29a329;
@@ -717,7 +726,7 @@ td .classRoom_delete_button{
 /*  */
 
 .striped-table {
-    width: 100%;
+    width: 97%;
     border-collapse: collapse;
     text-align: center;
 }
@@ -777,7 +786,7 @@ td .classRoom_delete_button{
 .Schedule__button--add{
     position: absolute;
     right: 6%;
-    bottom: 15%;
+    bottom: 8%;
 }
 
 #IsSignUp_Schedule_button,
@@ -787,17 +796,17 @@ td .classRoom_delete_button{
     background-color: #00c4cc;
     border-radius: 10px;
 }
-.Schedule_table{
-    width: 86%;
-    position: absolute;
-    top: 26%;
-    left: 6%;
-}
+
 .Schedule_table_container{
-    width: 80%;
+    width: 75%;
     position: absolute;
-    top: 26%;
-    left: 20%;
+    top: 28%;
+    left: 22%;
+    display: block;
+    border: 1px solid black;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 /* manager Subject */
 
@@ -869,3 +878,28 @@ td .classRoom_delete_button{
 .btn__manager--account div button:hover {
     opacity: 0.6;
 }
+
+.schedule__body--allNotUser {
+    border: 1px solid black;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#table__Subject--full {
+    border: 1px solid black;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 100px;
+    padding-right: 30px;
+}
+
+#table__Account--full {
+    border: 1px solid black;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 50px;
+}
+

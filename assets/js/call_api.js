@@ -328,13 +328,13 @@ let tableBody = null;
 let pageIndexManagerAccount = 1;
 
 // Gọi API với số trang được truyền vào
-async function fetchApiWithPageNumberManagerAccount(pageNumber) {
+async function fetchApiWithPageNumberManagerAccount() {
     try {
         
-        const getAccountUrl = `https://localhost:7013/api/UserManager?pageIndex=${pageNumber}&pageSize=${10}`;
+        const getAccountUrl = `https://localhost:7013/api/UserManager?pageIndex=${1}&pageSize=${9999}`;
         const response = await fetch(getAccountUrl);
         const data = await response.json();
-        displayDataAndPaginationManagerAccount(data, pageNumber);
+        displayDataAndPaginationManagerAccount(data);
     } catch (error) {
         console.error('Error fetching data:', error);
         alert(error);
@@ -549,26 +549,28 @@ function displayDataAndPaginationManagerAccount(data, currentPage) {
         tableBody.appendChild(row);
     });
 
+    // fetchApiWithPageNumberManagerAccount()
+
     // Tạo và gắn sự kiện cho các nút phân trang
-    const paginationContainer = document.createElement("div");
-    paginationContainer.style.margin = "20px 20px";
-    paginationContainer.style.position = "absolute";
-    paginationContainer.style.left = "50%";
+//     const paginationContainer = document.createElement("div");
+//     paginationContainer.style.margin = "20px 20px";
+//     paginationContainer.style.position = "absolute";
+//     paginationContainer.style.left = "50%";
 
-    for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
-        const button = document.createElement("button");
-        button.style.padding = "10px 10px";
-        button.innerText = i;
+//     for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
+//         const button = document.createElement("button");
+//         button.style.padding = "10px 10px";
+//         button.innerText = i;
 
-        button.addEventListener("click", () => {
-            pageIndexManagerAccount = i;
-            fetchApiWithPageNumberManagerAccount(pageIndexManagerAccount);
-        });
+//         button.addEventListener("click", () => {
+//             pageIndexManagerAccount = i;
+//             fetchApiWithPageNumberManagerAccount(pageIndexManagerAccount);
+//         });
 
-        paginationContainer.appendChild(button);
-    }
+//         paginationContainer.appendChild(button);
+//     }
 
-    tableBody.appendChild(paginationContainer);
+//     tableBody.appendChild(paginationContainer);
 }
 
 // Hàm gọi API ban đầu và hiển thị dữ liệu
@@ -594,10 +596,10 @@ let pageIndexSearchAccount = 1;
 async function fetchApiWithPageNumberSearchAccount(pageNumber, userId) {
     try {
         
-        const getAccountUrl = `https://localhost:7013/api/UserManager/Id?id=${userId}&pageIndex=${pageNumber}&pageSize=${10}`;
+        const getAccountUrl = `https://localhost:7013/api/UserManager/Id?id=${userId}&pageIndex=${1}&pageSize=${9999}`;
         const response = await fetch(getAccountUrl);
         const data = await response.json();
-        displayDataAndPaginationManagerAccount(data, pageNumber);
+        displayDataAndPaginationManagerAccount(data);
     } catch (error) {
         console.error('Error fetching data:', error);
         alert(error);
@@ -764,25 +766,25 @@ function displayDataAndPaginationSearchAccount(data, currentPage) {
     });
 
     // Tạo và gắn sự kiện cho các nút phân trang
-    const paginationContainer = document.createElement("div");
-    paginationContainer.style.margin = "20px 20px";
-    paginationContainer.style.position = "absolute";
-    paginationContainer.style.left = "50%";
+    // const paginationContainer = document.createElement("div");
+    // paginationContainer.style.margin = "20px 20px";
+    // paginationContainer.style.position = "absolute";
+    // paginationContainer.style.left = "50%";
 
-    for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
-        const button = document.createElement("button");
-        button.style.padding = "10px 10px";
-        button.innerText = i;
+    // for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
+    //     const button = document.createElement("button");
+    //     button.style.padding = "10px 10px";
+    //     button.innerText = i;
 
-        button.addEventListener("click", () => {
-            pageIndexSearchAccount = i;
-            fetchApiWithPageNumberSearchAccount(pageIndexSearchAccount, userId);
-        });
+    //     button.addEventListener("click", () => {
+    //         pageIndexSearchAccount = i;
+    //         fetchApiWithPageNumberSearchAccount(pageIndexSearchAccount, userId);
+    //     });
 
-        paginationContainer.appendChild(button);
-    }
+    //     paginationContainer.appendChild(button);
+    // }
 
-    tableBody__search.appendChild(paginationContainer);
+    // tableBody__search.appendChild(paginationContainer);
 }
 
 // Hàm gọi API ban đầu và hiển thị dữ liệu
@@ -1128,7 +1130,7 @@ async function GetAllManagerClass(pageIndex) {
 
 async function fetchApiWithPageNumberManagerClass(pageNumber) {
     try {
-        const getClassUrl = `https://localhost:7013/api/Class?pageIndex=${pageNumber}&pageSize=${5}`;
+        const getClassUrl = `https://localhost:7013/api/Class?pageIndex=${pageNumber}&pageSize=${9999}`;
         const response = await fetch(getClassUrl);
         const data = await response.json();
        
@@ -1326,23 +1328,23 @@ function displayDataAndPaginationManagerClass(data, currentPage) {
     }
 
     // Tạo và gắn sự kiện cho các nút phân trang
-    const paginationContainer = document.createElement("div");
-    paginationContainer.style.margin = "20px 20px";
-    paginationContainer.style.position = "absolute";
-    paginationContainer.style.left = "50%";
+    // const paginationContainer = document.createElement("div");
+    // paginationContainer.style.margin = "20px 20px";
+    // paginationContainer.style.position = "absolute";
+    // paginationContainer.style.left = "50%";
 
-    for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
-        const button = document.createElement("button");
-        button.style.padding = "10px 10px";
-        button.innerText = i;
+    // for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
+    //     const button = document.createElement("button");
+    //     button.style.padding = "10px 10px";
+    //     button.innerText = i;
 
-        button.addEventListener("click", () => {
-            pageIndexManagerClass = i;
-            fetchApiWithPageNumberManagerClass(pageIndexManagerClass);
-        });
-        paginationContainer.appendChild(button);
-    }
-    tableBody__searchClass.appendChild(paginationContainer);
+    //     button.addEventListener("click", () => {
+    //         pageIndexManagerClass = i;
+    //         fetchApiWithPageNumberManagerClass(pageIndexManagerClass);
+    //     });
+    //     paginationContainer.appendChild(button);
+    // }
+    // tableBody__searchClass.appendChild(paginationContainer);
 }
 
 function showUpdateClassForm(idItem){
@@ -1686,7 +1688,7 @@ async function GetAllManagerClassRoom(pageIndex) {
 
 async function fetchApiWithPageNumberManagerClassRoom(pageNumber) {
     try {
-        const getClassUrl = `https://localhost:7013/api/ClassRoom?pageIndex=${pageNumber}&pageSize=${5}`;
+        const getClassUrl = `https://localhost:7013/api/ClassRoom?pageIndex=${pageNumber}&pageSize=${9999}`;
         const response = await fetch(getClassUrl);
         const data = await response.json();
        
@@ -1867,23 +1869,23 @@ function displayDataAndPaginationManagerClassRoom(data, currentPage) {
     }
 
     // Tạo và gắn sự kiện cho các nút phân trang
-    const paginationContainer = document.createElement("div");
-    paginationContainer.style.margin = "20px 20px";
-    paginationContainer.style.position = "absolute";
-    paginationContainer.style.left = "60%";
+    // const paginationContainer = document.createElement("div");
+    // paginationContainer.style.margin = "20px 20px";
+    // paginationContainer.style.position = "absolute";
+    // paginationContainer.style.left = "60%";
 
-    for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
-        const button = document.createElement("button");
-        button.style.padding = "10px 10px";
-        button.innerText = i;
+    // for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
+    //     const button = document.createElement("button");
+    //     button.style.padding = "10px 10px";
+    //     button.innerText = i;
 
-        button.addEventListener("click", () => {
-            pageIndexManagerClass = i;
-            fetchApiWithPageNumberManagerClassRoom(pageIndexManagerClass);
-        });
-        paginationContainer.appendChild(button);
-    }
-    tableBody__searchClassRoom.appendChild(paginationContainer);
+    //     button.addEventListener("click", () => {
+    //         pageIndexManagerClass = i;
+    //         fetchApiWithPageNumberManagerClassRoom(pageIndexManagerClass);
+    //     });
+    //     paginationContainer.appendChild(button);
+    // }
+    // tableBody__searchClassRoom.appendChild(paginationContainer);
 }
 
 function showUpdateClassRoomForm(idItem){
@@ -2193,7 +2195,7 @@ async function fetchApiWithPageNumberManagerScheduleById(pageNumber, search) {
 async function fetchApiWithPageNumberManagerScheduleClass(pageNumber) {
     
     try {
-        const response = await fetch(`https://localhost:7013/api/Lecture_ScheduleManager?pageIndex=${pageNumber}&pageSize=${5}`, {
+        const response = await fetch(`https://localhost:7013/api/Lecture_ScheduleManager?pageIndex=${pageNumber}&pageSize=${9999}`, {
             method: 'GET',
             headers: {
               accept: 'application/json',
@@ -2372,23 +2374,23 @@ function displayDataAndPaginationManagerScheduleClass(data, currentPage) {
     }
 
     // Tạo và gắn sự kiện cho các nút phân trang
-    const paginationContainer = document.createElement("div");
-    paginationContainer.style.margin = "20px 20px";
-    paginationContainer.style.position = "absolute";
-    paginationContainer.style.left = "50%";
+    // const paginationContainer = document.createElement("div");
+    // paginationContainer.style.margin = "20px 20px";
+    // paginationContainer.style.position = "absolute";
+    // paginationContainer.style.left = "50%";
 
-    for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
-        const button = document.createElement("button");
-        button.style.padding = "10px 10px";
-        button.innerText = i;
+    // for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
+    //     const button = document.createElement("button");
+    //     button.style.padding = "10px 10px";
+    //     button.innerText = i;
 
-        button.addEventListener("click", () => {
-            pageIndexAllSchedules = i;
-            fetchApiWithPageNumberManagerScheduleClass(pageIndexAllSchedules);
-        });
-        paginationContainer.appendChild(button);
-    }
-    tableBody__AllSchedules.appendChild(paginationContainer);
+    //     button.addEventListener("click", () => {
+    //         pageIndexAllSchedules = i;
+    //         fetchApiWithPageNumberManagerScheduleClass(pageIndexAllSchedules);
+    //     });
+    //     paginationContainer.appendChild(button);
+    // }
+    // tableBody__AllSchedules.appendChild(paginationContainer);
 }
 
 // check register schedules
@@ -3293,12 +3295,12 @@ let tableBody__searchNotUserForSchedule = null;
 let pageIndexNotUserForSchedule = 1;
 
 // Gọi API với số trang được truyền vào
-async function fetchApiWithPageNumberNotUser(pageNumber) {
+async function fetchApiWithPageNumberNotUser() {
     try {
-        const getAccountUrl = `https://localhost:7013/api/LectureSchedule/Registered_Calendar?pageIndex=${pageNumber}&pageSize=${5}&check=${0}&Name=${'string'}`;
+        const getAccountUrl = `https://localhost:7013/api/LectureSchedule/Registered_Calendar?pageIndex=${1}&pageSize=${9999}&check=${0}&Name=${'string'}`;
         const response = await fetch(getAccountUrl);
         const data = await response.json();
-        displayDataAndPaginationNotUser(data, pageNumber);
+        displayDataAndPaginationNotUser(data);
     } catch (error) {
         console.error('Error fetching data:', error);
         alert(error);
@@ -3367,26 +3369,28 @@ function displayDataAndPaginationNotUser(data, currentPage) {
         tableBody__searchNotUserForSchedule.appendChild(row);
     });
 
-    // Tạo và gắn sự kiện cho các nút phân trang
-    const paginationContainer = document.createElement("div");
-    paginationContainer.style.margin = "20px 20px";
-    paginationContainer.style.position = "absolute";
-    paginationContainer.style.left = "36%";
+    fetchApiWithPageNumberNotUser()
 
-    for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
-        const button = document.createElement("button");
-        button.style.padding = "10px 10px";
-        button.innerText = i;
-        // addEventListener: Gắn 1 hàm xử lý sự kiện cho 1 phần tử
-        button.addEventListener("click", () => {
-            pageIndexNotUserForSchedule = i;
-            fetchApiWithPageNumberNotUser(pageIndexNotUserForSchedule);
-        });
+    // // Tạo và gắn sự kiện cho các nút phân trang
+    // const paginationContainer = document.createElement("div");
+    // paginationContainer.style.margin = "20px 20px";
+    // paginationContainer.style.position = "absolute";
+    // paginationContainer.style.left = "36%";
 
-        paginationContainer.appendChild(button);
-    }
+    // for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
+    //     const button = document.createElement("button");
+    //     button.style.padding = "10px 10px";
+    //     button.innerText = i;
+    //     // addEventListener: Gắn 1 hàm xử lý sự kiện cho 1 phần tử
+    //     button.addEventListener("click", () => {
+    //         pageIndexNotUserForSchedule = i;
+    //         fetchApiWithPageNumberNotUser(pageIndexNotUserForSchedule);
+    //     });
 
-    tableBody__searchNotUserForSchedule.appendChild(paginationContainer);
+    //     paginationContainer.appendChild(button);
+    // }
+
+    // tableBody__searchNotUserForSchedule.appendChild(paginationContainer);
 }
 
 // Hàm gọi API ban đầu và hiển thị dữ liệu
@@ -3425,13 +3429,13 @@ let tableBodySubject = null;
 let pageIndexManagerSubject = 1;
 
 // Gọi API với số trang được truyền vào
-async function fetchApiWithPageNumberManagerSubject(pageNumber) {
+async function fetchApiWithPageNumberManagerSubject() {
     try {
         
-        const getAccountUrl = `https://localhost:7013/api/Subject?pageIndex=${pageNumber}&pageSize=${10}`;
+        const getAccountUrl = `https://localhost:7013/api/Subject?pageIndex=${1}&pageSize=${9999}`;
         const response = await fetch(getAccountUrl);
         const data = await response.json();
-        displayDataAndPaginationManagerSubject(data, pageNumber);
+        displayDataAndPaginationManagerSubject(data );
     } catch (error) {
         console.error('Error fetching data:', error);
         alert(error);
@@ -3496,26 +3500,28 @@ function displayDataAndPaginationManagerSubject(data, currentPage) {
         tableBodySubject.appendChild(row);
     });
 
+    fetchApiWithPageNumberManagerSubject()
+
     // Tạo và gắn sự kiện cho các nút phân trang
-    const paginationContainer = document.createElement("div");
-    paginationContainer.style.margin = "20px 20px";
-    paginationContainer.style.position = "absolute";
-    paginationContainer.style.left = "50%";
+    // const paginationContainer = document.createElement("div");
+    // paginationContainer.style.margin = "20px 20px";
+    // paginationContainer.style.position = "absolute";
+    // paginationContainer.style.left = "50%";
 
-    for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
-        const button = document.createElement("button");
-        button.style.padding = "10px 10px";
-        button.innerText = i;
+    // for (let i = 1; i <= Math.ceil(data.totalRecords / 5); i++) {
+    //     const button = document.createElement("button");
+    //     button.style.padding = "10px 10px";
+    //     button.innerText = i;
 
-        button.addEventListener("click", () => {
-            pageIndexManagerSubject = i;
-            fetchApiWithPageNumberManagerSubject(pageIndexManagerSubject);
-        });
+    //     button.addEventListener("click", () => {
+    //         pageIndexManagerSubject = i;
+    //         fetchApiWithPageNumberManagerSubject(pageIndexManagerSubject);
+    //     });
 
-        paginationContainer.appendChild(button);
-    }
+    //     paginationContainer.appendChild(button);
+    // }
 
-    tableBodySubject.appendChild(paginationContainer);
+    // tableBodySubject.appendChild(paginationContainer);
 }
 
 // Hàm gọi API ban đầu và hiển thị dữ liệu
@@ -3541,7 +3547,7 @@ let pageIndexSearchAccountSubject = 1;
 async function fetchApiWithPageNumberSearchSubject(pageNumber, userId) {
     try {
         
-        const getAccountUrl = `https://localhost:7013/api/Subject/Id?Id=${userId}&pageIndex=${pageNumber}&pageSize=${10}`;
+        const getAccountUrl = `https://localhost:7013/api/Subject/Id?Id=${userId}&pageIndex=${1}&pageSize=${999}`;
         const response = await fetch(getAccountUrl);
         const data = await response.json();
         displayDataAndPaginationManagerSubject(data, pageNumber);
